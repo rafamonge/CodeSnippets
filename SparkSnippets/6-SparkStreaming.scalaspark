@@ -1,0 +1,18 @@
+// start the shell with this command:
+// spark-shell --master local[2]
+//
+// in a separate terminal
+// nc -lkv 1234
+
+import org.apache.spark.streaming.StreamingContext
+import org.apache.spark.streaming.StreamingContext._
+import org.apache.spark.streaming.Seconds
+
+var ssc = new StreamingContext(sc,Seconds(5))
+var mystream = ssc.socketTextStream("localhost",1234)
+var words = mystream.flatMap(line => line.split("\\W"))
+var wordCounts = words.map(x => (x, 1)).reduceByKey((x,y) => x+y)
+wordCounts.print()
+
+ssc.start()
+ssc.awaitTermination()

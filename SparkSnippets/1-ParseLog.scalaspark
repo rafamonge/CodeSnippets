@@ -1,0 +1,39 @@
+// Load and view a simple text file
+val mydata = sc.textFile("file:/home/training/training_materials/sparkdev/data/frostroad.txt")
+mydata.count()
+mydata.collect()
+
+// create an RDD based on a data file
+val logfile="/loudacre/weblogs/2013-09-15.log"
+val logs = sc.textFile(logfile)
+
+// count the number of records (lines) in the RDD
+logs.count()
+
+// display all lines which are requests for JPG files
+val jpglogs=logs.filter(line => line.contains(".jpg"))
+jpglogs.collect()
+
+// display the JPG requests, this time using a single command line
+sc.textFile(logfile).filter(line => line.contains(".jpg")).count()
+
+// Create an RDD of the length of each line in the file
+logs.map(line => line.length).take(5)
+
+// Map the log data to an RDD of arrays of the words on each line
+logs.map(line => line.split(' ')).take(5)
+
+// Map the log data to an RDD of IP addresses for each line 
+var ips = logs.map(line => line.split(' ')(0))
+ips.take(5).foreach(println)
+ 
+// Save the IP addresses to text file(s)
+ips.saveAsTextFile("/loudacre/iplist")
+
+// Bonus Exercise 1 - Do the same thing but use the whole data set
+sc.textFile("/loudacre/weblogs/*").map(line => line.split(' ')(0)).saveAsTextFile("/loudacre/iplist_entire")
+
+// Bonus Exercise 2 - Display "ip-address/user-id" for the first 5 HTML requests in the data set
+var htmllogs=logs.filter(_.contains(".html")).map(line => (line.split(' ')(0),line.split(' ')(2)))
+htmllogs.take(5).foreach(t => println(t._1 + "/" + t._2))
+

@@ -1,0 +1,15 @@
+# Read in list of target models from a local file
+targetfile = "/home/training/training_materials/sparkdev/data/targetmodels.txt"
+targetlist = list(map(lambda l: l.strip(),open(targetfile)))
+
+# broadcast the target list to all workers
+targetlistbc = sc.broadcast(targetlist)
+
+# filter out requests from devices not in the target list
+# web server log file(s)
+logfile="/loudacre/weblogs/*"
+targetreqs = sc.textFile(logfile)\
+    .filter(lambda line:  any(model in line for model in targetlistbc.value) )
+
+targetreqs.take(5)
+

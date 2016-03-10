@@ -1,0 +1,2 @@
+q<letra> -<recordWhatever> q
+on selected lines: :'<,'>normal @<letra>

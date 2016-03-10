@@ -1,0 +1,20 @@
+sqlCtx = SQLContext(sc)
+
+dburl = "jdbc:mysql://localhost/loudacre?user=training&password=training"
+webpages=sqlCtx.load(source="jdbc",url=dburl,dbtable="webpage")
+
+webpages.printSchema()
+
+assocfiles = webpages.select(webpages.web_page_num,webpages.associated_files)
+
+afilesrdd = assocfiles.map(lambda row: (row.web_page_num,row.associated_files))
+
+afilesrdd2 = afilesrdd.flatMapValues(lambda filestring: filestring.split(','))
+
+afiledf = sqlCtx.createDataFrame(afilesrdd2)
+
+afiledf.printSchema()
+
+finaldf=afiledf.withColumnRenamed('_1','web_page_num').withColumnRenamed('_2','associated_file')
+
+finaldf.save("/loudacre/webpage_files")

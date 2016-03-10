@@ -1,0 +1,20 @@
+jpgcount = sc.accumulator(0)
+htmlcount = sc.accumulator(0)
+csscount = sc.accumulator(0)
+
+def countFileType(s):
+    if '.jpg' in s: jpgcount.add(1)
+    elif '.html' in s: htmlcount.add(1)
+    elif '.css' in s: csscount.add(1)
+
+filename="/loudacre/weblogs/*"
+
+logs = sc.textFile(filename)
+logs.foreach(lambda line: countFileType(line))
+
+print  'Request Totals:'
+print '.css requests: ', csscount.value
+print '.html requests: ', htmlcount.value
+print '.jpg requests: ', jpgcount.value
+
+

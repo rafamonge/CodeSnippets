@@ -1,0 +1,37 @@
+# Explore partitioning of file-based RDDs
+
+# A single file RDD
+accounts=sc.textFile("/loudacre/accounts.csv")
+print accounts.toDebugString()
+
+# A single file RDD with a minimum number of partitions
+accounts=sc.textFile("/loudacre/accounts.csv",3)
+print accounts.toDebugString()
+
+
+# A multi file RDD 
+weblogs=sc.textFile("/loudacre/weblogs/*")
+print weblogs.toDebugString()
+
+# A smaller multi file RDD 
+weblogs=sc.textFile("/loudacre/weblogs/2013-10-*")
+print weblogs.toDebugString()
+
+# Set up the example job to
+# count web server log requests by user id
+userreqs = weblogs\
+  .map(lambda line: line.split()) \
+  .map(lambda words: (words[2],1)) \
+  .reduceByKey(lambda v1,v2: v1+v2)
+
+# Map account data to (userid,"lastname,firstname") pairs
+accountsByID = accounts\
+  .map(lambda s: s.split(',')) \
+  .map(lambda values: (values[0],values[4] + ',' + values[3]))
+
+# Join account names with request counts, print out first 10 ("lastname,firstname",count) pairs
+accounthits = accountsByID.join(userreqs).values()
+
+accounthits.take(10)   
+
+   

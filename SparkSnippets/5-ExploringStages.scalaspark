@@ -1,0 +1,42 @@
+// Explore partitioning of file-based RDDs
+
+// A single file RDD
+val accounts=sc.textFile("/loudacre/accounts.csv")
+accounts.toDebugString
+
+// A single file RDD with a minimum number of partitions
+val accounts=sc.textFile("/loudacre/accounts.csv",3)
+accounts.toDebugString
+
+
+// A multi file RDD 
+val weblogs=sc.textFile("/loudacre/weblogs/*")
+weblogs.toDebugString
+
+// A smaller multi file RDD 
+val weblogs=sc.textFile("/loudacre/weblogs/2013-10-*")
+weblogs.toDebugString
+
+// count web server log requests by user id
+
+// Map account data to (userid,"lastname,firstname") pairs
+val accountsByID = accounts.
+  map(line => line.split(',')).
+  map(values => (values(0),values(4)+','+values(3)))
+
+
+// Count web server log requests by user id
+val userreqs = weblogs.
+   map(line => line.split(' ')).
+   map(words => (words(2),1)). 
+   reduceByKey((v1,v2) => v1 + v2)
+   
+// Join account names with request counts, print out first 10 ("lastname,firstname",count) pairs
+val accounthits = 
+  accountsByID.join(userreqs).values
+
+accounthits.toDebugString
+
+accounthits.saveAsTextFile("userreqs")
+
+   

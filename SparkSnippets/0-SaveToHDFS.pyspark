@@ -1,0 +1,4 @@
+# Steps 14, 15 - Read in a weblog file, then filter and save the JPG requests
+logs=sc.textFile("hdfs://localhost/user/training/weblogs/2014-03-08.log")
+logs.filter(lambda s: ".jpg" in s).saveAsTextFile("hdfs://localhost/user/training/jpgs")
+

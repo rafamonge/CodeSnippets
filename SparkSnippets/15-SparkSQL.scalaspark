@@ -1,0 +1,22 @@
+import org.apache.spark.sql.SQLContext
+val sqlCtx = new SQLContext(sc)
+val dburl = "jdbc:mysql://localhost/loudacre?user=training&password=training"
+
+val webpages=sqlCtx.load("jdbc",   
+    Map("url"-> dburl,
+           "dbtable" -> "webpage"))
+webpages.printSchema
+
+val assocfiles = webpages.select(webpages("web_page_num"),webpages("associated_files"))
+
+val afilesrdd = assocfiles.map(row => (row.getInt(0),row.getString(1)))
+
+val afilesrdd2 = afilesrdd.flatMapValues(filestring => filestring.split(','))
+
+val afiledf = sqlCtx.createDataFrame(afilesrdd2)
+
+afiledf.printSchema
+
+val finaldf = afiledf.toDF("web_page_num","associated_file")
+
+finaldf.save("/loudacre/webpage_files")

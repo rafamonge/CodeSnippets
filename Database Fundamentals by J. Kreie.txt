@@ -1,0 +1,38 @@
+ 
+ 
+Database Fundamentals by J. Kreie
+Friday, July 24, 2015
+9:56 AM
+9 Lessons:
+Introduction
+https://www.youtube.com/watch?v=nhqOAuARzOM&index=1&list=PL1MJdy9N8XJKW4HYg_cOsz1-xRzD2zfsT
+ 
+The Data Model
+https://www.youtube.com/watch?v=BSgtEdUA_Qw&list=PL1MJdy9N8XJKW4HYg_cOsz1-xRzD2zfsT&index=2
+ 
+Defining Relationships in the Data Model
+https://www.youtube.com/watch?v=jU5Je47ivog&list=PL1MJdy9N8XJKW4HYg_cOsz1-xRzD2zfsT&index=3
+ 
+More About Defining Relationships
+https://www.youtube.com/watch?v=he9DRvm7zHo&list=PL1MJdy9N8XJKW4HYg_cOsz1-xRzD2zfsT&index=4
+ 
+Logical & Physical Data Models
+https://www.youtube.com/watch?v=g4rTz0U-6zs&list=PL1MJdy9N8XJKW4HYg_cOsz1-xRzD2zfsT&index=5
+ 
+How a Relationship is Built in the Database
+https://www.youtube.com/watch?v=g9SssmJbFTs&index=6&list=PL1MJdy9N8XJKW4HYg_cOsz1-xRzD2zfsT
+ 
+Foreign Keys in Unary and One-to-one Relationships
+https://www.youtube.com/watch?v=9TRNnljzIjE&index=7&list=PL1MJdy9N8XJKW4HYg_cOsz1-xRzD2zfsT
+ 
+Many-to-Many Relationships in a Data Model
+https://www.youtube.com/watch?v=FSoOkcuuLqE&list=PL1MJdy9N8XJKW4HYg_cOsz1-xRzD2zfsT&index=8
+ 
+Multi-valued Attributes
+https://www.youtube.com/watch?v=Eqjfm18u6MY&index=9&list=PL1MJdy9N8XJKW4HYg_cOsz1-xRzD2zfsT
+ 
+Test your Understanding
+https://www.youtube.com/watch?v=lXYgo87xcVQ&list=PL1MJdy9N8XJKW4HYg_cOsz1-xRzD2zfsT&index=11
+ 
+ 
+Created with Microsoft OneNote 2013.

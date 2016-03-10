@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{fe85a3cf-5b27-49e7-b17d-8a334192fd43}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile />
+    <SearchPath />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId>{9a7a9026-48c1-4688-9d5d-e5699d47d074}</InterpreterId>
+    <InterpreterVersion>3.5</InterpreterVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+    <PtvsTargetsFile>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets</PtvsTargetsFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="02 Quick Start\lines.txt" />
+    <Content Include="07 Loops\lines.txt" />
+    <Content Include="09 Regexes\raven.txt" />
+    <Content Include="10 Exceptions\lines.txt" />
+    <Content Include="13 Strings\lines.txt" />
+    <Content Include="14 Containers\utf8.txt" />
+    <Content Include="15 Files\bigfile.txt" />
+    <Content Include="15 Files\lines.txt" />
+    <Content Include="15 Files\olives.jpg" />
+    <Content Include="19 Projects\testimonials\html\db.css" />
+    <Content Include="19 Projects\testimonials\html\delconfirm.html" />
+    <Content Include="19 Projects\testimonials\html\edit.html" />
+    <Content Include="19 Projects\testimonials\html\footer.html" />
+    <Content Include="19 Projects\testimonials\html\header.html" />
+    <Content Include="19 Projects\testimonials\html\main.html" />
+    <Content Include="19 Projects\testimonials\html\nextprev.html" />
+    <Content Include="19 Projects\testimonials\html\recline.html" />
+    <Content Include="19 Projects\testimonials\index.html" />
+    <Content Include="19 Projects\testimonials\main.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="02 Quick Start\conditionals.py" />
+    <Compile Include="02 Quick Start\exceptions.py" />
+    <Compile Include="02 Quick Start\forloop.py" />
+    <Compile Include="02 Quick Start\function.py" />
+    <Compile Include="02 Quick Start\generator.py" />
+    <Compile Include="02 Quick Start\hello.py" />
+    <Compile Include="02 Quick Start\oop2.py" />
+    <Compile Include="02 Quick Start\oop3.py" />
+    <Compile Include="02 Quick Start\simpleoop.py" />
+    <Compile Include="02 Quick Start\whileloop.py" />
+    <Compile Include="04 Syntax\comments.py" />
+    <Compile Include="04 Syntax\syntax.py" />
+    <Compile Include="05 Variables\variables.py" />
+    <Compile Include="06 Conditionals\conditionals.py" />
+    <Compile Include="06 Conditionals\jumptable.py" />
+    <Compile Include="06 Conditionals\switch.py" />
+    <Compile Include="07 Loops\for.py" />
+    <Compile Include="07 Loops\iterators.py" />
+    <Compile Include="07 Loops\loopcontrol.py" />
+    <Compile Include="07 Loops\while.py" />
+    <Compile Include="08 Operators\ops.py" />
+    <Compile Include="09 Regexes\regex.py" />
+    <Compile Include="10 Exceptions\exceptions.py" />
+    <Compile Include="11 Functions\functions.py" />
+    <Compile Include="11 Functions\generator.py" />
+    <Compile Include="12 Classes\classes.py" />
+    <Compile Include="12 Classes\decorators.py" />
+    <Compile Include="12 Classes\generator.py" />
+    <Compile Include="13 Strings\strings.py" />
+    <Compile Include="14 Containers\containers.py" />
+    <Compile Include="15 Files\files.py" />
+    <Compile Include="16 Databases\databases.py" />
+    <Compile Include="16 Databases\sqlite3-class.py" />
+    <Compile Include="16 Databases\sqlite3-crud.py" />
+    <Compile Include="17 Modules\modules.py" />
+    <Compile Include="17 Modules\saytime.py" />
+    <Compile Include="17 Modules\web-saytime.py" />
+    <Compile Include="18 Debugging\incrange-errors.py" />
+    <Compile Include="18 Debugging\mvc-errors.py" />
+    <Compile Include="18 Debugging\saytime-errors.py" />
+    <Compile Include="18 Debugging\saytime.py" />
+    <Compile Include="18 Debugging\test-saytime.py" />
+    <Compile Include="19 Projects\Extras\RSS\rss.py" />
+    <Compile Include="19 Projects\Extras\RSS\rssdb.py" />
+    <Compile Include="19 Projects\Extras\RSS\tkrss.py" />
+    <Compile Include="19 Projects\lib\bwCGI.py" />
+    <Compile Include="19 Projects\lib\bwConfig.py" />
+    <Compile Include="19 Projects\lib\bwDB.py" />
+    <Compile Include="19 Projects\lib\bwTL.py" />
+    <Compile Include="19 Projects\lib\saytime.py" />
+    <Compile Include="19 Projects\testimonials\bwCGI.py" />
+    <Compile Include="19 Projects\testimonials\bwConfig.py" />
+    <Compile Include="19 Projects\testimonials\bwDB.py" />
+    <Compile Include="19 Projects\testimonials\bwTL.py" />
+    <Compile Include="19 Projects\testimonials\db.py" />
+    <Compile Include="19 Projects\testimonials\testimonials.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="02 Quick Start" />
+    <Folder Include="04 Syntax" />
+    <Folder Include="05 Variables" />
+    <Folder Include="06 Conditionals" />
+    <Folder Include="07 Loops" />
+    <Folder Include="08 Operators" />
+    <Folder Include="09 Regexes" />
+    <Folder Include="10 Exceptions" />
+    <Folder Include="11 Functions" />
+    <Folder Include="12 Classes" />
+    <Folder Include="13 Strings" />
+    <Folder Include="14 Containers" />
+    <Folder Include="15 Files" />
+    <Folder Include="16 Databases" />
+    <Folder Include="17 Modules" />
+    <Folder Include="18 Debugging" />
+    <Folder Include="19 Projects\" />
+    <Folder Include="19 Projects\Extras\" />
+    <Folder Include="19 Projects\Extras\RSS" />
+    <Folder Include="19 Projects\lib" />
+    <Folder Include="19 Projects\testimonials" />
+    <Folder Include="19 Projects\testimonials\html" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="{9a7a9026-48c1-4688-9d5d-e5699d47d074}\3.5" />
+  </ItemGroup>
+  <Import Project="$(PtvsTargetsFile)" Condition="Exists($(PtvsTargetsFile))" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="!Exists($(PtvsTargetsFile))" />
+</Project>
